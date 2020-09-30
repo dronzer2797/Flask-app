@@ -1,0 +1,27 @@
+{% extends 'encyclopedia/layout.html' %}
+{% load static %}
+
+{% block title %}
+    Create Page
+{% endblock %}
+
+{% block body %}
+ <div class="container">
+{#     <h1>Edit page</h1>#}
+
+     <form action="{% url 'save'  %}" method="post">
+         {% csrf_token %}
+         <h3>Title</h3>
+         <div id="titlebox">
+            <label for="newpagetitle">Title</label>
+            <input type="text" name="title" placeholder="Title of the page" required>
+         </div>
+         <div id = 'contentbox'>
+             <label for = 'newpagecontent'>Content (Markdown) of the page</label>
+             <textarea rows="10" name="markdown" required></textarea>
+
+         </div>
+         <button type="submit" class="btn-primary">Submit</button>
+     </form>
+ </div>
+{% endblock %}

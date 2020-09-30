@@ -1,0 +1,16 @@
+{% extends 'encyclopedia/layout.html' %}
+
+    {% block title %}
+     {{ title }}
+    {% endblock %}
+
+    {% block body %}
+        <div id = 'content-text'>
+            <h1> Error!! </h1>
+            <p>
+                The requested <b>{{ title }}</b> entry is not present.
+                Please search some other entry or create new entry
+            </p>
+
+        </div>
+    {% endblock %}
